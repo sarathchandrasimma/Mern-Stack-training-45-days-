@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <ttle>Document</title>
+     <style>
+      
+      #btn{
+        display:flex;
+        justify-content: center;
+        color: red;
+      }
+      #button:hover{
+        background-color: aqua;
+      }
+      #box{
+        background-color: aqua;
+        height: 10PX;
+        color: black;
+      }
+      #box :hover{
+        background-color: red;
+        color: white;
+      }
+      
+    </style>
+</head>
+<body>
+  <h1 id ="text">hello world..!</h1>
+  <button id="btn">Click</button>
+  <div id="box" style="background-color: aqua;height:200px;">
+    hover me 
+  </div>
+ 
+    <script>
+        const heading=document.getElementById("text")
+        const btn=document.getElementById("btn")
+        btn.addEventListener("click",function(){
+          heading.textContent="I got clicked"
+        })
+        // box.addEventListener("mouseover",function(){
+        //   box.style.backgroundColor="red";
+        //   box.textContent="you have hovered!";
+        // });
+        // box.addEventListener("mouseout",function(){
+        //   box.style.backgroundColor="aqua";
+        //   box.textContent="you can hover me !";
+        // });
+
+ 
+    </script>
+</body>
+</html>

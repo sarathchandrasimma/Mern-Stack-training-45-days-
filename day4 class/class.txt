@@ -1,0 +1,125 @@
+React js
+React is component based architecture 
+React is used to develop single page applications
+react is a declaretive ie - Declarative Programming (e.g., SQL, HTML, React) → You tell the computer what you want, and it figures out how to do it.
+ why react is fast= because its uses virtual dom ie a copy of browser or real dom
+
+DOM= document object model 
+react default port number is 5173
+ open reactvite
+ run npm create vite@latest in cmd in a new folder
+  and complete the setup with requried tech stack , like react+js
+  next run npm install or npm i
+  next run npm run dev
+
+  in the structure of the react app
+  src is the main folder and main.jsx is the root file ie the combination of js+xml ie html+script.js
+  and in main.jsx we have app.jsx which is the parent of the main.jsx file 
+
+  example app.jsx file:
+  let const app=()=>{
+    // this is the javascript part
+    return(
+        //this is the html file 
+    )
+  }export default app
+ we have inline , module ,gloabal css
+ we can see the examples
+
+ // import "./index.css"
+import Home from "./components/Home"
+import About from "./components/About"
+const App=()=>
+{
+  const a=10
+  return(
+    <div>
+      <Home amount={a}/>
+      <About/>
+    </div>
+  )
+}
+export default App 
+ in components we have created home.jsx, about.jsx and we should call them in the App.jsx by importing and calling them in the xml or html
+ 
+
+
+ //complete code by resource person
+
+ 
+ import "./index.css"
+import Home from "./Components/Home"
+import { useEffect, useState } from "react";
+
+const App = () => {
+
+  // let num1 = 0;
+  // const increment1 = ()=>{
+  //   num1 = num1 +1;
+  //   console.log(num1)
+  // }
+
+  // // Using State
+  // const [num2,setNum2] =useState(10)
+  // const increment2 = ()=>{
+  //   setNum2(num2+10)
+  //   console.log(num2)
+  // }
+
+  // const [name,setName]=useState("siddu")
+
+  // const [count1,setCount1] =useState(0)
+  // const [count2,setCount2] =useState(100)
+  // const Counter1 = ()=>{
+  //   setCount1(count1+10)
+  // }
+  // const Counter2 = ()=>{
+  //   setCount2(count2+100)
+  // }
+  // useEffect(()=>{
+  //   console.log("rendered")
+  // },[count1])
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+
+   const handlesubmit =(e)=>{
+    e.preventDefault()
+    console.log(name)
+    console.log(email)
+   }
+
+   const handlechange=(e)=>{
+    setName(e.target.value)
+    console.log(e.target.value)
+   }
+  return (
+    <div>
+           <form onSubmit={handlesubmit}> 
+              <label>name</label>
+              <input type="name" value={name} onChange={handlechange} />  <br />
+              <label>email</label>
+              <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />  <br />
+             <button type="submit">Submit</button>
+           </form>
+
+         {/* <h1>{count1}</h1>
+         <button onClick={Counter1}>Counter1</button> <br /> <br />
+         <h1>{count2}</h1>
+          <button onClick={Counter2}>Counter2</button>
+         */}
+
+     {/* <h1>{name}</h1>
+       <button onClick={()=>{setName("vishnu")}}>change</button>
+
+      <h1>Props</h1>
+      {num1}  <br />
+       <button onClick={increment1}>Click</button>
+       <h1>Use State</h1>
+       {num2}  <br />
+       <button onClick={increment2}>Click</button> */}
+    </div>
+  );
+};
+
+export default App;

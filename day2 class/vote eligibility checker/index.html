@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Eligibility</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function checkEligibility() {
+            let age = parseInt(document.getElementById("ageInput").value);
+            
+            if (isNaN(age)) {
+                document.getElementById("result").innerText = "Please enter a valid age.";
+                return;
+            }
+
+            let message = age >= 18 
+                ? `Congratulations! You are eligible to vote since you are ${age - 18} years older than the required age.` 
+                : `Sorry, you need to wait for ${18 - age} years to vote.`;
+
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+</head>
+<body>
+    <h1>Voting Eligibility Check</h1>
+    <p>Enter your age to check if you can vote:</p>
+
+    <form onsubmit="event.preventDefault(); checkEligibility();">
+        <input type="number" id="ageInput" placeholder="Your Age" required>
+        <button type="submit">Check Eligibility</button>
+    </form>
+
+    <p id="result"></p>
+</body>
+</html> 

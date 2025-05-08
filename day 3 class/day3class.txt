@@ -1,0 +1,169 @@
+// console.log("hello world");
+// let fun=()=>console.log("hello Sarath..");
+// let n=10;
+// // while(n>0){
+//    fun()
+//     n--
+// }
+
+// for (let i=0;i<n;i--){
+//     fun()
+// }
+// let arr=[1,2,3,4,5,6]
+// for (i in arr){
+//     console.log(arr[i])
+// // }
+// let dict={name:"sarath",age:"20",class:"CSD"}
+// for(key in dict){
+//     console.log(`${key} : ${dict[key]} `)
+//     console.log(key+ ":" +dict[key] )
+// }
+// let a=(a,b,...c)=>console.log(a,b,c)
+// a("a","a","a")
+
+// let fact=(n)=>{
+//     if(n<=1){
+//         return 1;
+//     }
+//     return n*fact(n-1);
+// }
+// console.log(fact(5))
+
+
+
+//ingrediants:- Bread,veggies,cheese
+// function getBread(callback) {
+//   setTimeout(() => {
+//     const bread = '🍞';
+//     console.log(`${bread} is Ready`);
+//     callback(bread);
+//   }, 5000);
+// }
+
+// function getVeggies(bread, callback) {
+//   setTimeout(() => {
+//     const veggies = bread + '🍅🫑🧅';
+//     console.log(`${veggies} is Ready`);
+//     callback(veggies);
+//   }, 5000);
+// }
+
+// function getCheese(veggies, callback) {
+//   setTimeout(() => {
+//     const cheese = veggies + '🧀';
+//     console.log(`${cheese} is Ready`);
+//     callback(cheese);
+//   }, 7000);
+// }
+
+// function getBurger(cheese, callback) {
+//   const burger = cheese + '🍔';
+//   console.log(`${burger} is prepared`);
+//   callback();
+// }
+
+// // Correct callback nesting
+// getBread(function(bread) {
+//   getVeggies(bread, function(veggies) {
+//     getCheese(veggies, function(cheese) {
+//       getBurger(cheese, function() {
+//         console.log("🍽 Enjoy your burger!");
+//       });
+//     });
+//   });
+// });
+//ingrediants:- Bread,veggies,cheese
+// function getBread() {
+//    return  new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     const bread = '🍞';
+//     console.log(`${bread} is Ready`);
+//     reject(bread);
+//   }, 5000);
+//      })
+// }
+
+// function getVeggies(bread) {
+//   return  new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     const veggies = bread + '🍅🫑🧅';
+//     console.log(`${veggies} is Ready`);
+//     reject(veggies);
+//   }, 5000);
+// })
+// }
+
+// function getCheese(veggies) {
+//   return  new Promise((resolve,reject)=>{
+//   setTimeout(() => {
+//     const cheese = veggies + '🧀';
+//     console.log(`${cheese} is Ready`);
+//     resolve(cheese);
+//   }, 7000);
+//   })
+// }
+
+// function getBurger(cheese) {
+//   const burger = cheese + '🍔';
+//   console.log(`Burger ${burger} is prepared`);
+// }
+
+// getBread()
+// .then((bread)=>{return getVeggies(bread)})
+// .then((veggies)=>{return getCheese(veggies)})
+// .then((cheese)=>{return getBurger(cheese)})
+// .catch(()=>{
+//   console.log("issue in preparing burger")
+// })
+
+// function printOne(){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//       console.log("print 1"),resolve()
+//     }, 4000);
+//   })
+// }
+// function PrintTwo(){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//       console.log("print 2"),resolve()
+//     }, 2000);
+//   })
+// }
+// async function fun1(){
+//   try{
+
+//     const a=await printOne()
+//     const b=await PrintTwo(a)
+//   }catch(err){
+//     console.log("this is the error:"+err)
+//   }
+  
+// }
+// fun1()
+
+function printOne() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {console.log("Print One"),   resolve()}
+           ,4000);
+          
+        });
+      }
+
+      function printTwo() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {console.log("Print two"),   resolve()}
+          ,1000);
+      });
+      }
+
+      async function asyncFunc() {
+        try {
+        const resultOne = await printOne(); // 
+        const resultTwo = await printTwo(resultOne);
+        console.log("end")
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      asyncFunc();

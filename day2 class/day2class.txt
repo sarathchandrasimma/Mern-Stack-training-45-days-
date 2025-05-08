@@ -1,0 +1,178 @@
+<!--DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script> -->
+<!-- // // a=100;
+      // // b="sarath"
+      // // c='tarurn'
+      // // d=`ajay`
+      // // e=true
+      // // f=null
+      // // console.log(typeof(a))
+      // // console.log(typeof(b))
+      // // console.log(typeof(c))
+      // // console.log(typeof(d))
+      // // console.log(typeof(e))
+      // // console.log(typeof(f))
+      // // // console.log(typeof(a))
+      // // var a;
+      // // a="sarath"
+      // // // console.log(a)
+      // // var a;
+      // // console.log(a)
+      // // a="chandra"
+      // // console.log(a)
+      // // let a="sarath"
+      // // console.log(a)
+      // // const b=5;
+      // // console.log(b)
+      // // console.log(a)
+      // // var a="sarath"
+      // // a=10
+      // // b="10"
+      // // console.log(a==b)
+      // // console.log(a===b)
+      // // if(10==='10'){
+      // //     console.log("satisfied")
+      // // }
+      // // else{
+      // //     console.log("unsatisfied")
+      // // }
+      // // let age=20
+      // // let canVote=age>=18 ? "Congratulations you are Eligible": "Sorry you should wait for 18-age years"
+      // // console.log(canVote)
+      let age = parseInt(prompt("Enter your age: "));
+      console.log(age);
+      let canVote =
+        age >= 18
+          ? `Congratulations Your are Eligble since you are ${age-18} years more than the eligible`
+          : `Sorry you need to wait for ${18-age} years to vote`;
+
+      console.log(canVote);
+      // //so var can be redeclared and reinitialized
+      // //but let cannot be redeclared and and can be re-initialized
+      // //but const cannot be redclared and reinitialized
+    </script>
+  </head>
+  <body>
+    <h2>hi ra mowa..!</h2>
+    <h1> Niku vote hakku undha..!</h1>
+    <div class="AGE">
+        <form action="/script.js" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="age" name="age" placeholder="Your Age" required />
+          <textarea name="message" placeholder="Your Feedback" rows="5" required></textarea> -->
+<!-- <button type="submit">Submit</button>
+        </form>
+      </div>
+  </body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Eligibility</title>
+    <script>
+        function checkEligibility() {
+            let age = parseInt(document.getElementById("ageInput").value);
+            
+            if (isNaN(age)) {
+                document.getElementById("result").innerText = "Please enter a valid age.";
+                return;
+            }
+
+            let message = age >= 18 
+                ? `Congratulations! You are eligible to vote since you are ${age - 18} years older than the required age.` 
+                : `Sorry, you need to wait for ${18 - age} years to vote.`;
+
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+</head>
+<body>
+    <h1>Voting Eligibility Check</h1>
+    <p>Enter your age to check if you can vote:</p>
+
+    <form onsubmit="event.preventDefault(); checkEligibility();">
+        <input type="number" id="ageInput" placeholder="Your Age" required>
+        <button type="submit">Check Eligibility</button>
+    </form>
+
+    <p id="result"></p>
+</body>
+</html> -->
+
+so var can be redeclared and reinitialized
+but let cannot be redeclared and and can be re-initialized
+but const cannot be redclared and reinitialized
+ var a;
+ a="Ajay"
+ console.log(a)
+ fun()
+ func()
+ function fun(){
+         console.log("hello world!")
+ }
+ fun()
+ const func=function fun1(){ //function expression
+         console.log("how are you")
+ }
+
+function fun(a,b,c){
+    console.log(a,b,c)
+}
+fun("sarath","thanoj","jashu")
+
+function fun1(a,...b){
+    console.log(a,b)
+}
+fun1(1,4,5,5,)
+function getString(){
+    return "sarath chandra"
+}
+console.log(getString())
+function getNumber(){
+    return 18
+}
+console.log(getNumber())
+function getArray(){
+    return [1,3,4,"sarath"]
+}
+console.log(getArray())
+// anonymous function
+function (){
+    console.log("sarath")
+}
+let fun=()=> console.log("hellow") //arrow function 
+fun()
+// let fun=()=> console.log("hellow") //arrow function 
+// fun()
+const str=" sarath "
+// console.log(str.length)
+// console.log(str.toLowerCase())
+// console.log(str.toUpperCase())
+// console.log(str.indexOf(  "a"))
+// console.log(str.lastIndexOf(  "a"))
+// console.log(str.includes("s"))
+// console.log(str.includes(""u))
+console.log(str.substring(3,5))
+console.log(str.split(""))
+console.log(str.replace("a","b"))
+console.log(str.replaceAll("a","b"))
+console.log(str.trimStart())
+console.log(str.trim())
+let arr=[1,5,"a",'i',8]
+console.log(arr.pop())
+console.log(arr.push(9))
+console.log(arr)
+console.log(arr.unshift(0))
+console.log(arr)
+console.log(arr.shift())
+console.log(arr.splice(4,1))
+console.log(arr)
+console.log(arr.splice(2,2,3,4))
+console.log(arr)
