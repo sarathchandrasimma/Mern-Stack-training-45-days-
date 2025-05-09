@@ -16,7 +16,28 @@ show collections or tables ; show tables/show collections
 to use them: use {table name}
 ie use AITAM
 
-for finding :
-db.B1.find({},{})
+CRUD operation in mongoshell:
 
- to list out the databases
+db.B1.find({//condition},{projection or what to find and we use Age:1 for including and _id:0 for excluding})
+
+ for updation we use db.B1.updateOne({filter},{ updation value})
+ example:
+ db.B1.updateOne({name:"sarath"},{$set:{name:"sarath chandra }})
+ db.B1.insertMany([{},{},{}])// we have give them in the array
+ db.B1.delete({})
+ db.B1.deleteMany({})
+
+
+
+
+  Node.js:
+  Node js is a runtime environment to run javascript in backend in serverside 
+  node js is created to solve the only usage of js in browser side and with node js we can work in server side
+   so if we learn js we can become full stack developer since react.js is frontend and node.js is a backend 
+
+   npm init -y
+
+   three types of modules:
+builtin module
+custom module
+third party module
