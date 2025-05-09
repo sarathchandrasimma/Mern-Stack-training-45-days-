@@ -1,0 +1,22 @@
+MongoDB
+
+mongoDb community server : it is local MongoDB
+mongodb shell: cli
+mongodb compass: gui 
+mongodb atlas: cloud DB
+
+
+did creation of database in mongodb compass i.e gui
+for cli we use cmd and we type "mongosh"
+and here 127.0.0.1:27017: "127.0.0.1" is local address of system and "27017" is the port number of mongodb
+
+mongoshell commands and their functionalities:
+show dbs: to show the databases
+show collections or tables ; show tables/show collections
+to use them: use {table name}
+ie use AITAM
+
+for finding :
+db.B1.find({},{})
+
+ to list out the databases
