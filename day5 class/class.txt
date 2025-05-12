@@ -41,3 +41,55 @@ db.B1.find({//condition},{projection or what to find and we use Age:1 for includ
 builtin module
 custom module
 third party module
+
+
+afternoon class
+ created project folder and couple of folders
+ and run npm init -y in server directory
+
+
+server.js
+
+const add=()=>{
+    console.log("this is from add")
+}
+// add()
+module.exports=add;
+
+index.js
+
+const add=require("./server")
+add();
+
+and run node server.js or run index.js
+
+
+in http functionalities we have two parameters 
+example
+app.get("/path",//handlers// (req,res)=>{
+
+})
+
+status: 200 means success
+status:400 means frontend error
+status: 500 means backend error
+
+we have installed thunder client and ran this using node index.js since it is a index.js code 
+const express =require("express");
+const app =express();
+const PORT= 5173;
+app.get("/",(req,res)=>{
+    res.send(" hello this is from get")
+})
+app.post("/create",(req,res)=>{
+    res.send(" hello this is from post")
+})
+app.put("/update",(req,res)=>{
+    res.send(" hello this is from put")
+})
+app.delete("/delete",(req,res)=>{
+    res.send(" hello this is from this from delete")
+})
+app.listen(PORT,()=>{
+    console.log(`server is running at http://localhost:${PORT}/`)
+})

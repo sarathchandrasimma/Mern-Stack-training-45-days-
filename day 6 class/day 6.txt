@@ -1,0 +1,3 @@
+installed bootstrap from react bootstrap website with cmd
+created navbar component
+ used buttons,cards,carousels and scrolling navbar from the react bootstarp
