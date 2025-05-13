@@ -1,0 +1,201 @@
+implemented router,browserrouter,route using the following code so that we got multiple pages 
+import React from 'react'
+import About from "./components/About"
+import Home from "./components/Home"
+import {BrowserRouter,Routes,Route} from "react-router"
+
+const App = () => {
+  return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<h1>
+            Welcome
+          </h1>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+        </Routes>
+      </BrowserRouter>
+  )
+}
+
+export default App
+
+implemented MPA and SPA using following code
+import React from 'react'
+import {Link} from "react-router"
+
+const Navbar = () => {
+  return (
+    <div>
+      <h1>MPA</h1>
+      <br />
+      <a href="/about">About</a><br />
+      <a href="/home">Home</a><br />
+      <a href="/contactus">Contact Us</a><br />
+      <a href="/tesitmonials">Testimonials</a>
+      <h1>SPA</h1><br />
+      <Link to={"/home"}>Home page</Link><br />
+      <Link to={"/about"}>About Page</Link><br />
+      <Link to={"/testimonials"}>Testimonials</Link>
+
+    </div>
+  )
+}
+
+implemented users 
+import React from 'react'
+import {Link} from "react-router"
+
+
+const Navbar = () => {
+  return (
+    <div>
+      <h1>MPA</h1>
+      <br />
+      <a href="/about">About</a><br />
+      <a href="/home">Home</a><br />
+      <a href="/contactus">Contact Us</a><br />
+      <a href="/tesitmonials">Testimonials</a>
+      <h1>SPA</h1><br />
+      <Link to={"/home"}>Home page</Link><br />
+      <Link to={"/users/name"}>User page</Link><br />
+      <Link to={"/home"}>Home page</Link><br />
+      <Link to={"/about"}>About Page</Link><br />
+      <Link to={"/tesitmonials"}>Testimonials</Link>
+      <h1>Users</h1>
+      <div style={{display:"flex",justifyContent:"space-around",widht:"10px"}}>
+      <Link to="/users/sarath">Sarath</Link>
+      <Link to="/users/kumar">Kumar</Link>
+      <Link to ="/users/tarun">Tarun</Link>
+      <Link to="/users/ganta">Ganta</Link>
+      </div>
+    </div>
+  )
+}
+
+export default Navbar
+
+using useParams function
+import React from 'react'
+import { useParams } from 'react-router'
+const Users = () => {
+  const{name}=useParams()
+  console.log(name)
+  return (
+    <div style={{backgroundColor:'aqua',fontStyle:'italic'}}>
+      <h1>{name}'s page</h1>
+      <p>this is {name}'s' page showing now</p>
+    </div>
+  )
+}
+
+export default Users
+
+import React from 'react'
+import About from "./components/About"
+import Home from "./components/Home"
+import Navbar from './components/Navbar'
+import {BrowserRouter,Routes,Route} from "react-router"
+import Users from './components/Users'
+
+const App = () => {
+  return (
+      <BrowserRouter>
+      <Navbar/>
+      {/* <Users/> */}
+        <Routes>
+          <Route path="/" element={<h1>hello</h1>} />
+          <Route path="/tesitmonials" element={<h1>this is testimonials</h1>} />
+          <Route path="/contactus" element={<h1>this is contact us</h1>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/users/:name" element={<Users/>} />
+          <Route path="*" element={<h1>404 Page Not Found</h1>} />
+        </Routes>
+      </BrowserRouter>
+  )
+}
+ also updated navscrool to link to routes and given todo list as work with code 
+ import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState('');
+
+  // Load tasks from localStorage on component mount
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  // Save tasks to localStorage whenever tasks change
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  const handleAddTask = () => {
+    if (input.trim()) {
+      const newTasks = [...tasks, { text: input, completed: false }];
+      setTasks(newTasks);
+      setInput('');
+    }
+  };
+
+  const toggleTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].completed = !newTasks[index].completed;
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i !== index);
+    setTasks(newTasks);
+  };
+
+  return (
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">React To-Do List 📝</h2>
+
+      <div className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Enter a task..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button className="btn btn-primary" onClick={handleAddTask}>Add</button>
+      </div>
+
+      <ul className="list-group">
+        {tasks.length === 0 ? (
+          <li className="list-group-item text-muted">No tasks yet</li>
+        ) : (
+          tasks.map((task, index) => (
+            <li
+              key={index}
+              className="list-group-item d-flex justify-content-between align-items-center"
+              style={{
+                textDecoration: task.completed ? 'line-through' : 'none',
+              }}
+            >
+              <span onClick={() => toggleTask(index)} style={{ cursor: 'pointer' }}>
+                {task.text}
+              </span>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={() => deleteTask(index)}
+              >
+                ❌
+              </button>
+            </li>
+          ))
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
