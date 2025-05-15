@@ -1,0 +1,7 @@
+explained the day9.js content and given two tasks on api calls using axios 
+ as in the image and another task is to display records on the frontend using axios and i used table to display it
+https://jsonplaceholder.typicode.com/
+
+https://jsonplaceholder.typicode.com/photos
+
+and this is the my final completed task : https://smart-bridge-mern-mongo-db-tasks.vercel.app/
