@@ -1,0 +1,40 @@
+checked the assignments and told about its implementation
+started Node js
+node js is a run time environment, earlier we only have javascript and it only works for browser side and using node js we can work in server side 
+and node js is faster since it is asynchronous means it uses single thread to run the task
+
+const os =require('os')
+
+console.log(os.hostname())
+console.log(os.type())
+console.log(os.release())
+
+
+// console.log(os.cpus())
+console.log(os.totalmem()/(1024 * 1024 *1024),"GB")
+
+const http=require('http')
+const server=http.createServer((req,res)=>{
+    res.write("hello mowa broo..");
+    res.end()
+})
+
+server.listen(2000,()=>{
+    console.log("server is running);
+})
+
+const math= require('./Math')
+
+console.log(math.Add(4,4))  //8 
+console.log(math.Sub(4,4))
+
+function Add(a,b){
+    return a+b;
+}
+
+function Sub(a,b){
+     return a-b
+}
+   
+
+module.exports = {Add , Sub};
