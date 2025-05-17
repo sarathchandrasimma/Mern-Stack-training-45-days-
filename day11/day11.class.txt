@@ -1,0 +1,81 @@
+/ const express = require('express')
+// const mongoose = require('mongoose')
+
+// const app = express()
+// mongoose.connect("mongodb://127.0.0.1:27017/AITAM")
+// .then(()=>{
+//     console.log("Connected to database")
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
+
+// //restful api
+// app.get('/home',(req,res)=>{
+//     res.send("Hello All")
+//     res.end()
+// })
+
+// app.listen(8000,()=>{
+//     console.log("Server is Running");
+// })
+
+const express = require('express')
+const mongoose = require('mongoose')
+
+const app = express()
+
+mongoose.connect('mongodb://127.0.0.1:27017/AITAM')
+.then(()=>{
+    console.log("Connected to Database")
+})
+.catch((err)=>{
+    console.log("error")
+})
+
+const userSchema =new mongoose.Schema({
+    name:String,
+    age:Number,
+    // email:String
+})
+
+const User = mongoose.model('b1',userSchema)
+
+
+
+// RestFull API
+app.get('/',(req,res)=>{
+    User.find()
+    .then((user)=>{
+        res.json(user)
+    })
+
+.catch((err)=>{
+        console.log("Error Fetching Data")
+    })
+})
+
+app.listen(8080,()=>{
+    console.log("Server is Running");
+})
+
+app.use(express.json())
+app.post('/add-data',(req,res)=>{
+    // const {name,age,email} =req.body;
+    const {name,age} =req.body;
+    const newUser = new User({name,age})
+    // const newUser = new User({name,email,age})
+    newUser.save()
+    .then((user)=>{
+        res.json(user)
+    })
+    .catch((err)=>{
+        console.log("error Adding Data")
+    })
+})
+
+
+used express,mongoose by npm i express mongoose
+and used as above code and connected to database AITAM
+and performed get and post operations in Thunder client using the localhost:8080 and  localhost:8080/add-data
+and can use post by adding the data in the body in any format ,here used json format and the data is added in the compass in the B1 model 
