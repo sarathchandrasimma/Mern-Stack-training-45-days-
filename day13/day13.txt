@@ -1,0 +1,8 @@
+Asked for the task and i have done the project and it is in the full app folder and todays learings are as follows:
+SAID ABOUT ;
+diff b/w sql and nosql
+and we should use reddis as a layer: 
+maximum size of mongodg database is 16MB
+mongodb use bson which is works in json and bson stands for binary object notation
+we used mongoshell in compass 
+used toastly from bootstrap for notifications

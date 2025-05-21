@@ -1,0 +1,3 @@
+Explained the day11 code and created seperate folders for users,controllers,modelsand routes and created respected js files and converted them into modules 
+and using module.exports={delete user,adduser,getuser,updateuser} we have created usercontroller and using express.routes()
+we have created routues for these three and used them these are the CRUD operations using restful apis
